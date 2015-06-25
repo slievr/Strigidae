@@ -1,0 +1,36 @@
+/* small >>> large */
+@mixin bp($point, $base: false, $media: all) {
+  @media only #{$media} and (min-width: nth($breakpoints, $point)) {
+    @content;
+  }
+
+  @if $point <= $ie-breakpoint {
+
+    //checks if the mixin has been included at the base-level already, if not, use @at-root to make it so
+    @if $base {
+      .ie {
+        @content;
+      }
+    }
+    @else {
+      //watch out when using & in the @content, may cause .ie to appear in two places in the selector
+      @at-root .ie & {
+        @content;
+      }
+    }
+  }
+}
+
+/* small <<< large */
+@mixin up-to-bp($point, $media: all) {
+  @media only #{$media} and (max-width: nth($breakpoints, $point) - 0.001em) {
+    @content;
+  }
+}
+
+/* between specified breakpoints */
+@mixin bp-to-bp($point1, $point2, $media: all) {
+  @media only #{$media} and (min-width: nth($breakpoints, $point1)) and (max-width: nth($breakpoints, $point2)) {
+    @content;
+  }
+}
