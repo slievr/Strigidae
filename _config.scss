@@ -1,0 +1,53 @@
+
+/********************\
+	Typography
+\********************/
+$header-font-family: 'pantonextralight','Lato', Arial, sans-serif;
+$base-font-family: 'LytigaPro','Lato', Arial, sans-serif;
+$base-font-size: 16px;
+$alt-font-family: 'Lato', sans-serif;
+
+/********************\
+	Colors
+\********************/
+
+$brand-color: #130f33;
+$brand-secondary-color:#7dbac2;
+$ui-color: #A5A2A3;
+
+
+/********************\
+	Responsive Grid
+\********************/
+
+$grid-gutter: 1em;
+
+$breakpoints: 32em 45em 58em 71em 85em;
+//note: best limit this to 4 or 5 points;
+$ie-breakpoint: 4;
+/*	prefixes all selectors in all breakpoints up to $ie-breakpoint with .ie
+	ensures IE<9 gets these rules that would otherwise be hidden inside a media query
+	requires an element with .ie to wrap all elements in only IE<9, for example http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+*/
+$enable-responsive-aid: true;
+$enable-grid-width-transition: false;
+$grid-width-transition-properties: 0.3s ease;
+
+/********************\
+	Buttons
+\********************/
+
+$buttons:
+	branded $brand-color,
+	info #509be3,
+	success #83dd3a;
+	
+/********************\
+	Messages
+\********************/
+
+$message-types:
+	info #509be3,
+	success #6ac223,
+	alert #c22323,
+	disabled #999;
