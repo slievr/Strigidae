@@ -1,1 +1,6 @@
-@import "core/main";
+@import "config";
+
+@import "modules/main",
+		"core/main";
+
+@import "partials/main";
