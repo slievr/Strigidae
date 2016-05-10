@@ -1,0 +1,25 @@
+@if $enable-responsive-aid {
+    body:before {
+        content:"0";
+        position:fixed;
+        bottom:0px;
+        left:0;
+        font-weight:600;
+        font-size:3em;
+        opacity:0.3;
+        color:#FFF;
+        background-color:#000;
+        line-height:100%;
+        z-index:50001;
+        padding: .05em .2em;
+        border-top-right-radius: 3px;
+    }
+
+    @each $alias, $query in $av-breakpoints{
+        @include av-mq($alias){
+            body:before {
+               content:"#{$alias}";
+            }
+        }
+    }
+}
